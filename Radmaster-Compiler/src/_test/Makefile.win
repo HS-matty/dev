@@ -1,17 +1,18 @@
-# Project: rrc
+# Project: rrc_test
 # Makefile created by Dev-C++ 5.11
 
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = rrc.o vendor/Radmaster/clib/console.o vendor/Radmaster/clib/console/ansi.o
-LINKOBJ  = rrc.o vendor/Radmaster/clib/console.o vendor/Radmaster/clib/console/ansi.o
-LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -m32 -g3
+RES      = rrc_private.res
+OBJ      = test.o $(RES)
+LINKOBJ  = test.o $(RES)
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
 BIN      = rrc.exe
-CXXFLAGS = $(CXXINCS) -m32 -g3
-CFLAGS   = $(INCS) -m32 -g3
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
 RM       = rm.exe -f
 
 .PHONY: all all-before all-after clean clean-custom
@@ -24,11 +25,9 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-rrc.o: rrc.c
-	$(CC) -c rrc.c -o rrc.o $(CFLAGS)
+test.o: test.c
+	$(CC) -c test.c -o test.o $(CFLAGS)
 
-vendor/Radmaster/clib/console.o: vendor/Radmaster/clib/console.c
-	$(CC) -c vendor/Radmaster/clib/console.c -o vendor/Radmaster/clib/console.o $(CFLAGS)
+rrc_private.res: rrc_private.rc 
+	$(WINDRES) -i rrc_private.rc --input-format=rc -o rrc_private.res -O coff 
 
-vendor/Radmaster/clib/console/ansi.o: vendor/Radmaster/clib/console/ansi.c
-	$(CC) -c vendor/Radmaster/clib/console/ansi.c -o vendor/Radmaster/clib/console/ansi.o $(CFLAGS)

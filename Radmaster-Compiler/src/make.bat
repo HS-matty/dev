@@ -1,0 +1,1 @@
+gcc rrc.c -o rrc.exe
