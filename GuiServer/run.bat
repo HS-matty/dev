@@ -1,0 +1,2 @@
+javac CommandLineExample.java
+java CommandLineExample
