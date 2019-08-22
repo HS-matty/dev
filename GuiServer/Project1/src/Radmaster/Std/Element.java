@@ -19,4 +19,19 @@ public class Element extends StdClass {
     public Element() {
         super();
     }
+
+    @Override
+    public Element _this() {
+        return this;
+    }
+
+    @Override
+    public Element value(String value) {
+        return (Element)super.value(value);
+    }
+
+    @Override
+    public Element name(String name) {
+        return (Element)super.name(name);
+    }
 }
