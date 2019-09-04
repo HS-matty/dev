@@ -1,0 +1,70 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Description</h3></td>
+		<td align="right"><h3>Cat&eacute;gorie :  <font color="green">Performance</font></h3></td>
+	</tr>
+</table>
+
+Une variable est pass&eacute;e par r&eacute;f&eacute;rence, mais sa valeur n'est pas modifi&eacute;e.
+Contrairement &agrave; la croyance populaire, cela <i>r&eacute;duit</i> les performances
+dans la plupart des cas, et il est pr&eacute;f&eacute;rable d'utiliser la m&eacute;thode de 
+passage par valeur standard.
+
+<h3>Exemple</h3>
+
+<table border="1">
+<tr>
+<td>
+Inefficace
+</td>
+<td bgcolor="#cccccc">
+<!-- Wrong -->
+<font color="#007700">function </font><font Color="#0000BB">foo</font><font color="#007700">(&amp;</font><font color="#0000BB">$a</font><font color="#007700">)
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font color="#0000BB">$a</font><font color="#007700">;
+<br>}
+</font>
+<!-- End -->
+</td>
+</tr>
+
+<tr>
+<td>
+Recommand&eacute;
+</td>
+<td bgcolor="#cccccc">
+<!-- Correct -->
+<font color="#007700">function </font><font Color="#0000BB">foo</font><font color="#007700">(</font><font color="#0000BB">$a</font><font color="#007700">)
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font color="#0000BB">$a</font><font color="#007700">;
+<br>}
+</font>
+<!-- End -->
+</td>
+</tr>
+</table>
+
+
+<!--inefficient
+function foo(&$a)
+{
+	echo $a;
+}
+-->
+
+<!--recommended
+function foo($a)
+{
+	echo $a;
+}
+-->
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Description</h3></td>
+		<td align="right"><h3>Cat&eacute;gorie :  <font color="#804000">Style de codage</font></h3></td>
+	</tr>
+</table>
+
+<b>define()</b> voit souvent sont premier argument cod&eacute; comme une constante,
+sans guillemets. Ceci est incorrect : le premier argument de <b>define()</b> 
+doit &ecirc;tre une cha&icirc;ne de caract&egrave;res, pas une constante.
+
+<h3>Exemple</h3>
+
+<table border="1">
+<tr>
+<td>
+Incorrect
+</td>
+<td bgcolor="#cccccc">
+<!-- Wrong -->
+<font color="#0000BB">define</font><font color="#007700">(</font><font color="#0000BB">LIFE</font><font color="#007700">, </font><font color="#0000BB">42</font><font color="#007700">);</font>
+</font>
+<!-- End -->
+</td>
+</tr>
+
+<tr>
+<td>
+Correct
+</td>
+<td bgcolor="#cccccc">
+<!-- Correct -->
+<font color="#0000BB">define</font><font color="#007700">(</font><font color="#DD0000">'LIFE'</font><font color="#007700">, </font><font color="#0000BB">42</font><font color="#007700">);</font>
+</font>
+<!-- End -->
+</td>
+</tr>
+</table>
+
+</body>
+</html>

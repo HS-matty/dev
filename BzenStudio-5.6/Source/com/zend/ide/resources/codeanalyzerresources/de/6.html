@@ -1,0 +1,31 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Beschreibung</h3></td>
+		<td align="right"><h3>Kategorie:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Objekt wird in Boole'schem Kontext verwendet, obwohl dies bedeutungslos ist.
+
+<h3>Beispiel</h3>
+
+<font color="#007700">if ((</font><font color="#0000BB">$a </font><font color="#007700">= new </font><font Color="#0000BB">Foo</font><font color="#007700">())) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;...
+<br>}
+<br></font>
+</font>
+
+<!--
+if (($a = new Foo())) {
+	...
+}
+-->
+
+</body>
+</html>

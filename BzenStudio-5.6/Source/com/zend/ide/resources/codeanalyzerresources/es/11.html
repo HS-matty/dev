@@ -1,0 +1,54 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Descripción</h3></td>
+		<td align="right"><h3>Categorú}:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+El contructor <b>break</b> permite a los desarrolladores saltar fuera de múltiples sentencias de bucle,
+especificando un argumento opcional. El pasar una variable a <b>break</b> como argumento puede cambiar
+el flujo del código de manera inesperada y debe ser evitado.
+
+<h2>Ejemplo</h2>
+
+<table border="1">
+<tr>
+<td>
+Peligroso
+</td>
+<td bgcolor="#cccccc">
+<!-- Wrong -->
+<font color="#007700">break </font><font color="#0000BB">$foo</font><font color="#007700">;
+</font>
+</font>
+<!-- End -->
+</td>
+</tr>
+
+<tr>
+<td>
+Alternativa
+</td>
+<td bgcolor="#cccccc">
+<!-- Correct -->
+<font color="#007700">if (</font><font color="#0000BB">$foo</font><font color="#007700">==</font><font color="#0000BB">1</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;break;
+<br>} else if (</font><font color="#0000BB">$foo</font><font color="#007700">=</font><font color="#0000BB">2</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;break </font><font color="#0000BB">2</font><font color="#007700">;
+<br>} else {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;die(</font><font color="#DD0000">"Error inesperado"</font><font color="#007700">);
+<br>}
+<br></font>
+</font><!-- End -->
+</td>
+</tr>
+</table>
+
+</body>
+</html>

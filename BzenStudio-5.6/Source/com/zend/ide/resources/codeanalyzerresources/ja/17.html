@@ -1,0 +1,42 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+</head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>説明</h3></td>
+		<td align="right"><h3>カテゴリ：  <font color="red">セキュリティ</font></h3></td>
+	</tr>
+</table>
+
+グローバル変数は、その変数自身が定義される前に使用されることがあります。
+register_globals　変数の設定あるいは、外部のインクルードファイル内に変数が
+定義されている場合にその事象に関する警告メッセージが出力されるかもしれません。
+また、それらの警告メッセージを無視するように設定することもできます。
+
+しかしながら、このような振る舞いは、ある環境の中でコードを実行した時、予測が
+つかない振る舞いをする場合もあることに注意してください。
+
+
+<h3>サンプル</h3>
+
+<font color="#FF8000">// $a was never initialized!
+<br></font><font color="#007700">if (</font><font color="#0000BB">$a </font><font color="#007700">&gt; </font><font color="#0000BB">0</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;...
+<br>}
+<br></font>
+</font>
+
+<!--
+// $a was never initialized!
+if ($a > 0) {
+	...
+}
+-->
+
+</body>
+</html>

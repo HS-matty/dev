@@ -1,0 +1,29 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+</head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>説明</h3></td>
+		<td align="right"><h3>カテゴリ:  <font color="blue">バグ</font></h3></td>
+	</tr>
+</table>
+
+PHP の行コメントは、PHP 構文の終端タグである ?> で終了しなけれななりません。いくつかのコードあるいは、HTML タグは、?> タグを超えて評価されるかもしれません。いくつかのケースでは、これは、望ましいことではないかもしれませんが。
+
+<h3>サンプル</h3>
+
+<font color="#0000BB">&lt;? </font><font color="#007700">echo </font><font color="#DD0000">"Hello!"</font><font color="#007700">; </font><font color="#FF8000">// これは、コメントです </font><font color="#0000BB">?&gt;&lt;? </font><font color="#007700">echo </font><font color="#DD0000">"これは、表示されます" </font><font color="#0000BB">?&gt;
+<br></font>
+</font>
+
+<!--
+<? echo "Hello!"; // これは、コメントです ?><? echo "これは、表示されます" ?>
+-->
+
+</body>
+</html>

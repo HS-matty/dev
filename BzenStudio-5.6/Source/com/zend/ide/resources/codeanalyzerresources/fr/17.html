@@ -1,0 +1,39 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Description</h3></td>
+		<td align="right"><h3>Cat&eacute;gorie :  <font color="red">S&eacute;curit&eacute;</font></h3></td>
+	</tr>
+</table>
+
+Une variable globale est utilis&eacute;e avant qu'elle ne soit d&eacute;finie.
+Vous pouvez rencontrer cette alerte si vous utiliser l'option de
+register_globals ou des variables d&eacute;finies dans des fichiers
+externes inclus, auquel cas, vous pouvez l'ignorer.
+
+N&eacute;anmois, notez que cela peut conduire votre code &agrave; des comportements
+impr&eacute;dictibles dans certains contextes.
+
+<h3>Exemple</h3>
+
+<font color="#FF8000">// $a n'est jamais initialis&eacute;!
+<br></font><font color="#007700">if (</font><font color="#0000BB">$a </font><font color="#007700">&gt; </font><font color="#0000BB">0</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;...
+<br>}
+<br></font>
+</font>
+
+<!--
+// $a n'est jamais initialis&eacute;!
+if ($a > 0) {
+	...
+}
+-->
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Descripción</h3></td>
+		<td align="right"><h3>Categorú}:  <font color="green">Rendimiento</font></h3></td>
+	</tr>
+</table>
+
+Una variable es pasada por referencia pero su valor no es modificado.
+Contrariamente a la creencia popular, esto incurre en una <i>reducción</i> del
+rendimiento en la mayorú} de los casos, por ello es preferible usar el
+estándar de paso-por-valor.
+
+
+<h3>Ejemplo</h3>
+
+<table border="1">
+<tr>
+<td>
+Ineficiente
+</td>
+<td bgcolor="#cccccc">
+<!-- Wrong -->
+<font color="#007700">function </font><font Color="#0000BB">foo</font><font color="#007700">(&amp;</font><font color="#0000BB">$a</font><font color="#007700">)
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font color="#0000BB">$a</font><font color="#007700">;
+<br>}
+</font>
+<!-- End -->
+</td>
+</tr>
+
+<tr>
+<td>
+Recomendado
+</td>
+<td bgcolor="#cccccc">
+<!-- Correct -->
+<font color="#007700">function </font><font Color="#0000BB">foo</font><font color="#007700">(</font><font color="#0000BB">$a</font><font color="#007700">)
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font color="#0000BB">$a</font><font color="#007700">;
+<br>}
+</font>
+<!-- End -->
+</td>
+</tr>
+</table>
+
+
+<!--inefficient
+function foo(&$a)
+{
+	echo $a;
+}
+-->
+
+<!--recommended
+function foo($a)
+{
+	echo $a;
+}
+-->
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Descripción</h3></td>
+		<td align="right"><h3>Categorú}:  <font color="red">Seguridad</font></h3></td>
+	</tr>
+</table>
+
+Una variable global es usada antes de ser definida.
+Podrú} ver esta alerta si confú} en register_globals o variables definidas
+en ficheros incluúos, en cuyo caso podrú} elegir simplemente ignorarlos.
+
+Aun as? nótese que esto podrú} comportarse impredeciblemente cuando
+corra baja ciertos contextos.
+
+
+<h3>Ejemplo</h3>
+
+<font color="#FF8000">// $a no ha sido nunca inicializada!
+<br></font><font color="#007700">if (</font><font color="#0000BB">$a </font><font color="#007700">&gt; </font><font color="#0000BB">0</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;...
+<br>}
+<br></font>
+</font>
+
+<!--
+// $a was never initialized!
+if ($a > 0) {
+	...
+}
+-->
+
+</body>
+</html>

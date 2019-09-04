@@ -1,0 +1,39 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+</head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>説明</h3></td>
+		<td align="right"><h3>カテゴリ：  <font color="blue">バグ</font></h3></td>
+	</tr>
+</table>
+
+関数内のいくつかのコードに到達することができません。したがって、コードの未到達
+部分は実行できません。
+
+
+<h3>サンプル</h3>
+
+
+<font color="#007700">function </font><font Color="#0000BB">foo</font><font color="#007700">()
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;...
+<br>&nbsp;&nbsp;&nbsp;&nbsp;return;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font Color="#0000BB">doSomethingImportant</font><font color="#007700">();&nbsp;&nbsp;</font><font color="#FF8000">// cannot be reached!
+<br></font><font color="#007700">}</font>
+
+<!--
+function foo()
+{
+	...
+	return;
+	doSomethingImportant();  // cannot be reached!
+}
+-->
+</body>
+</html>

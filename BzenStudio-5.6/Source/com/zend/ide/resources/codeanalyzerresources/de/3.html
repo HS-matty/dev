@@ -1,0 +1,39 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Beschreibung</h3></td>
+		<td align="right"><h3>Kategorie:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Zuweisungen in einem Konditionalausdruck sind manchmal ein Tippfehler.
+
+In vielen Fällen soll eigentlich der Gleichheitsoperator == anstelle des
+Zuweisungsoperators = benutzt werden.
+
+Um diesem Fehler vorzubeugen können Sie die Variable auf die rechte Seite
+des Ausdrucks setzen. In diesem Fall meldet PHP dann einen Parser-Fehler,
+falls der Zuweisungsoperator versehentlich verwendet wurde.
+
+<h3>Beispiel</h3>
+
+<font color="#007700">if (</font><font color="#0000BB">$a </font><font color="#007700">= </font><font color="#0000BB">1</font><font color="#007700">) { </font><font color="#FF8000">// Sollte möglicherweise $a == 1 heissen.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#007700">...
+<br>}
+<br></font>
+</font>
+
+<!--
+if ($a = 1) { // Sollte möglicherweise $a == 1 heissen.
+	...
+}
+-->
+
+
+</body>
+</html>

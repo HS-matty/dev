@@ -1,0 +1,38 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Description</h3></td>
+		<td align="right"><h3>Category:  <font color="red">Security</font></h3></td>
+	</tr>
+</table>
+
+A global variable is used before it is defined.
+You may see this warning if you rely on register_globals or variables
+defined in external include files, in which you may choose to ignore it.
+
+However, note that this may cause the code to behave in unpredictable
+ways when run in certain contexts.
+
+<h3>Example</h3>
+
+<font color="#FF8000">// $a was never initialized!
+<br></font><font color="#007700">if (</font><font color="#0000BB">$a </font><font color="#007700">&gt; </font><font color="#0000BB">0</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;...
+<br>}
+<br></font>
+</font>
+
+<!--
+// $a was never initialized!
+if ($a > 0) {
+	...
+}
+-->
+
+</body>
+</html>

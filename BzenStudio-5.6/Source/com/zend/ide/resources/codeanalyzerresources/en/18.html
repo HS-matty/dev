@@ -1,0 +1,127 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Description</h3></td>
+		<td align="right"><h3>Category:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+One of <b>$HTTP_*_VARS</b> variables, like <b>$HTTP_GET_VARS</b>, is being used.
+However, unlike the newer input variables (<b>$_GET</b>, <b>$_POST</b>, etc.), the old
+<b>$HTTP_*_VARS</b> variables are <i>not</i> implicitly available in functions.
+
+In order to access them, you must declare them as global, or use the $GLOBALS
+array, or use the new <b>$_GET</b>/<b>$_POST</b>/<b>$_COOKIE</b>/<b>$_SERVER</b>/<b>$_ENV</b>/<b>$_SESSION</b> variables
+instead (recommended).
+
+<h3>Example</h3>
+
+<table border="1">
+<tr>
+<td>
+Wrong
+</td>
+<td bgcolor="#cccccc">
+<!-- Wrong -->
+<font color="#007700">function </font><font Color="#0000BB">hello_world</font><font color="#007700">()
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;if (empty(</font><font color="#0000BB">$HTTP_GET_VARS</font><font color="#007700">[</font><font color="#DD0000">'name'</font><font color="#007700">])) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#FF8000">// $HTTP_GET_VARS is always undefined in this context
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#007700">print </font><font color="#DD0000">"Hello, stranger!"</font><font color="#007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;} else {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font color="#DD0000">"Hello, $HTTP_GET_VARS</font><font color="#007700">[</font><font color="#DD0000">name</font><font color="#007700">]</font><font color="#DD0000">"</font><font color="#007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>}</font>
+</font>
+<!-- End -->
+</td>
+</tr>
+
+<tr>
+<td>
+Correct<br>alternative #1
+</td>
+<td bgcolor="#cccccc">
+<!-- Correct -->
+<font color="#007700">function </font><font Color="#0000BB">hello_world</font><font color="#007700">()
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;global </font><font color="#0000BB">$HTTP_GET_VARS</font><font color="#007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;if (empty(</font><font color="#0000BB">$HTTP_GET_VARS</font><font color="#007700">[</font><font color="#DD0000">'name'</font><font color="#007700">])) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font color="#DD0000">"Hello, stranger!"</font><font color="#007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;} else {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font color="#DD0000">"Hello, $HTTP_GET_VARS</font><font color="#007700">[</font><font color="#DD0000">name</font><font color="#007700">]</font><font color="#DD0000">"</font><font color="#007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>}
+<br></font>
+</font><!-- End -->
+</td>
+</tr>
+
+<tr>
+<td>
+Correct<br>alternative #2<br>(recommended)
+</td>
+<td bgcolor="#cccccc">
+<!-- Correct -->
+<font color="#007700">function </font><font Color="#0000BB">hello_world</font><font color="#007700">()
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;if (empty(</font><font color="#0000BB">$_GET</font><font color="#007700">[</font><font color="#DD0000">'name'</font><font color="#007700">])) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font color="#DD0000">"Hello, stranger!"</font><font color="#007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;} else {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font color="#DD0000">"Hello, $_GET</font><font color="#007700">[</font><font color="#DD0000">name</font><font color="#007700">]</font><font color="#DD0000">"</font><font color="#007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>}</font>
+</font>
+<!-- End -->
+</td>
+</tr>
+
+</table>
+
+
+
+<!--incorrect
+function hello_world()
+{
+	if (empty($HTTP_GET_VARS['name'])) {
+		// $HTTP_GET_VARS is always undefined in this context
+		print "Hello, stranger!";
+	} else {
+		print "Hello, $HTTP_GET_VARS[name]";
+	}
+}
+-->
+
+<!--correct1
+function hello_world()
+{
+	global $HTTP_GET_VARS;
+	
+	if (empty($HTTP_GET_VARS['name'])) {
+		print "Hello, stranger!";
+	} else {
+		print "Hello, $HTTP_GET_VARS[name]";
+	}
+}
+-->
+
+<!--correct2
+function hello_world()
+{
+	if (empty($_GET['name'])) {
+		print "Hello, stranger!";
+	} else {
+		print "Hello, $_GET[name]";
+	}
+}
+-->
+
+
+</body>
+</html>

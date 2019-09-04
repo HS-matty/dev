@@ -1,0 +1,79 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Beschreibung</h3></td>
+		<td align="right"><h3>Kategorie:  <font color="#804000">Deprecated Functionality</font></h3></td>
+	</tr>
+</table>
+
+Call-Time Pass-by-Reference ist in neueren PHP-Versionen "deprecated". Anstatt 
+den Parameter beim Funktionsaufruf mit einem &-Präfix zu versehen, geben Sie 
+dies bei der Funktionsdeklaration an.
+
+<h3>Beispiel</h3>
+
+<table border="1">
+<tr>
+<td>
+Deprecated
+</td>
+<td bgcolor="#cccccc">
+<!-- Wrong -->
+<font color="#007700">function </font><font Color="#0000BB">increment</font><font color="#007700">(</font><font color="#0000BB">$n</font><font color="#007700">)
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000BB">$n</font><font color="#007700">++;
+<br>}
+<br>
+<br></font><font color="#0000BB">$foo </font><font color="#007700">= </font><font color="#0000BB">5</font><font color="#007700">;
+<br></font><font Color="#0000BB">increment</font><font color="#007700">(&amp;</font><font color="#0000BB">$foo</font><font color="#007700">);</font>
+</font>
+<!-- End -->
+</td>
+</tr>
+
+<tr>
+<td>
+Korrekt
+</td>
+<td bgcolor="#cccccc">
+<!-- Correct -->
+<font color="#007700">function </font><font Color="#0000BB">increment</font><font color="#007700">(&amp;</font><font color="#0000BB">$n</font><font color="#007700">)
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000BB">$n</font><font color="#007700">++;
+<br>}
+<br>
+<br></font><font color="#0000BB">$foo </font><font color="#007700">= </font><font color="#0000BB">5</font><font color="#007700">;
+<br></font><font Color="#0000BB">increment</font><font color="#007700">(</font><font color="#0000BB">$foo</font><font color="#007700">);</font>
+</font>
+<!-- End -->
+</td>
+</tr>
+</table>
+
+<!--incorrect
+function increment($n)
+{
+	$n++;
+}
+
+$foo = 5;
+increment(&$foo);
+-->
+
+<!--correct
+function increment(&$n)
+{
+	$n++;
+}
+
+$foo = 5;
+increment($foo);
+-->
+
+</body>
+</html>

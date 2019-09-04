@@ -1,0 +1,47 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+</head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>説明</h3></td>
+		<td align="right"><h3>カテゴリ：  <font color="blue">バグ</font></h3></td>
+	</tr>
+</table>
+
+<b>break</b>文に指定した引数値は、現在の入れ子階層より大きい値でなくてはなりません。
+
+<h3>サンプル</h3>
+
+<font color="#007700">function </font><font Color="#0000BB">example</font><font color="#007700">()
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;for (</font><font color="#0000BB">$i</font><font color="#007700">=</font><font color="#0000BB">0</font><font color="#007700">; </font><font color="#0000BB">$i</font><font color="#007700">&lt;</font><font color="#0000BB">100</font><font color="#007700">; </font><font color="#0000BB">$i</font><font color="#007700">++) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (</font><font color="#0000BB">$j</font><font color="#007700">=</font><font color="#0000BB">0</font><font color="#007700">; </font><font color="#0000BB">$j</font><font color="#007700">&lt;</font><font color="#0000BB">100</font><font color="#007700">; </font><font color="#0000BB">$j</font><font color="#007700">++) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ((</font><font color="#0000BB">$i </font><font color="#007700">* </font><font color="#0000BB">$j</font><font color="#007700">) &gt; </font><font color="#0000BB">1000</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break </font><font color="#0000BB">3</font><font color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#FF8000">// The nesting level in this location is only 2
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#007700">}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>}
+<br></font>
+</font>
+
+<!--
+function example()
+{
+	for ($i=0; $i<100; $i++) {
+		for ($j=0; $j<100; $j++) {
+			if (($i * $j) > 1000) {
+				break 3;		// The nesting level in this location is only 2
+			}
+		}
+	}
+}
+-->
+
+</body>
+</html>

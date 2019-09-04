@@ -1,0 +1,29 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+</head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>説明</h3></td>
+		<td align="right"><h3>カテゴリ：  <font color="blue">バグ</font></h3></td>
+	</tr>
+</table>
+
+<b>sprintf()</b>関数は、正規の形式より多い引数で呼び出されました。これらの超過した引数は、無視されます。
+
+
+<h3>サンプル</h3>
+
+<font color="#0000BB">
+sprintf</font><font color="#007700">(</font><font color="#DD0000">"%d %d\n"</font><font color="#007700">, </font><font color="#0000BB">1</font><font color="#007700">, </font><font color="#0000BB">2</font><font color="#007700">, </font><font color="#0000BB">3</font><font color="#007700">); </font>
+
+
+<!--
+sprintf("%d %d\n", 1, 2, 3); // format string expects only 2 arguments, 3 given
+-->
+</body>
+</html>

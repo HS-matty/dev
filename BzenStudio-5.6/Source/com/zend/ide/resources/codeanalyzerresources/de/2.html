@@ -1,0 +1,29 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Beschreibung</h3></td>
+		<td align="right"><h3>Kategorie:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Einzeilige PHP-Kommentare enden mit dem ?>-Tag. Jeglicher HTML- und/oder PHP-
+Code hinter dem ?>-Tag wird ausgewertet. Dies ist jedoch nicht in allen Fällen 
+erw?scht.
+
+<h3>Beispiel</h3>
+
+<font color="#0000BB">&lt;? </font><font color="#007700">echo </font><font color="#DD0000">"Hello!"</font><font color="#007700">; </font><font color="#FF8000">// Dies ist ein Kommentar. </font><font color="#0000BB">?&gt;&lt;? </font><font color="#007700">echo </font><font color="#DD0000">"Dies wird gedruckt!" </font><font color="#0000BB">?&gt;
+<br></font>
+</font>
+
+<!--
+<? echo "Hello!"; // Dies ist ein Kommentar. ?><? echo "Dies wird gedruckt!" ?>
+-->
+
+</body>
+</html>

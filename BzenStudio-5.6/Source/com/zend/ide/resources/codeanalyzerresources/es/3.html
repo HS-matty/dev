@@ -1,0 +1,40 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Descripción</h3></td>
+		<td align="right"><h3>Categorú}:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Asignaciones dentro de estructuras condicionales son generalmente el resultado
+de un error tipográfico. En muchos casos, en vez de usar el operador de asignación =,
+el operador de comparación de igualdad ==, deberú} ser usado.
+Cuando se compara una expresión variable con una no-variable, is una práctica común
+el poner una variable en la parte derecha del operador de comparación, as?si
+la el operador de comparación es reemplazado por error con el operador de asignación, PHP
+reportar?inmediatamente un parse error. Esto ayuda a evitar un buen número de errores
+de este tipo.
+
+
+<h3>Ejemplo</h3>
+
+<font color="#007700">if (</font><font color="#0000BB">$a </font><font color="#007700">= </font><font color="#0000BB">1</font><font color="#007700">) { </font><font color="#FF8000">// seguramente quiso poner $a == 1 aqui
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#007700">...
+<br>}
+<br></font>
+</font>
+
+<!--
+if ($a = 1) { // probably it was meant to be $a == 1 here
+	...
+}
+-->
+
+
+</body>
+</html>

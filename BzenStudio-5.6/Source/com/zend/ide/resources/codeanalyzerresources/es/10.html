@@ -1,0 +1,46 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Descripción</h3></td>
+		<td align="right"><h3>Categorú}:  <font color="#804000">Estilo del Código</font></h3></td>
+	</tr>
+</table>
+
+<b>define()</b> a menudo se le pasa un argumento en forma de constante, es decir sin entrecomillar.
+Esto es incorrecto - el primer argumento de <b>define()</b> debe ser una cadena regular, no una constante.
+
+<h3>Ejemplo</h3>
+
+<table border="1">
+<tr>
+<td>
+Erroneo
+</td>
+<td bgcolor="#cccccc">
+<!-- Wrong -->
+<font color="#0000BB">define</font><font color="#007700">(</font><font color="#0000BB">VIDA</font><font color="#007700">, </font><font color="#0000BB">42</font><font color="#007700">);</font>
+</font>
+<!-- End -->
+</td>
+</tr>
+
+<tr>
+<td>
+Correcto
+</td>
+<td bgcolor="#cccccc">
+<!-- Correct -->
+<font color="#0000BB">define</font><font color="#007700">(</font><font color="#DD0000">'VIDA'</font><font color="#007700">, </font><font color="#0000BB">42</font><font color="#007700">);</font>
+</font>
+<!-- End -->
+</td>
+</tr>
+</table>
+
+</body>
+</html>

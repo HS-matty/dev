@@ -1,0 +1,68 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Beschreibung</h3></td>
+		<td align="right"><h3>Kategorie:  <font color="green">Performance</font></h3></td>
+	</tr>
+</table>
+
+Eine Variable wird als Referenz ?ergeben, jedoch nicht modifiziert.
+Aus Performanzgr?den wird empfohlen, stattdessen keine Referenz zu ?ergeben.
+
+<h3>Beispiel</h3>
+
+<table border="1">
+<tr>
+<td>
+Ineffizient
+</td>
+<td bgcolor="#cccccc">
+<!-- Wrong -->
+<font color="#007700">function </font><font Color="#0000BB">foo</font><font color="#007700">(&amp;</font><font color="#0000BB">$a</font><font color="#007700">)
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font color="#0000BB">$a</font><font color="#007700">;
+<br>}
+</font>
+<!-- End -->
+</td>
+</tr>
+
+<tr>
+<td>
+Empfohlen
+</td>
+<td bgcolor="#cccccc">
+<!-- Correct -->
+<font color="#007700">function </font><font Color="#0000BB">foo</font><font color="#007700">(</font><font color="#0000BB">$a</font><font color="#007700">)
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font color="#0000BB">$a</font><font color="#007700">;
+<br>}
+</font>
+<!-- End -->
+</td>
+</tr>
+</table>
+
+
+<!--inefficient
+function foo(&$a)
+{
+	echo $a;
+}
+-->
+
+<!--recommended
+function foo($a)
+{
+	echo $a;
+}
+-->
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Description</h3></td>
+		<td align="right"><h3>Cat&eacute;gorie :  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Une partie du code de la fonction ne peut pas &ecirc;tre utilis&eacute;.
+Cette partie de code est inutile.
+
+<h3>Exemple</h3>
+
+
+<font color="#007700">function </font><font Color="#0000BB">foo</font><font color="#007700">()
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;...
+<br>&nbsp;&nbsp;&nbsp;&nbsp;return;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font Color="#0000BB">FaireQuelqueChose</font><font color="#007700">();&nbsp;&nbsp;</font><font color="#FF8000">// Inutile!
+<br></font><font color="#007700">}</font>
+
+<!--
+function foo()
+{
+	...
+	return;
+	FaireQuelqueChose();  // cannot be reached!
+}
+-->
+</body>
+</html>

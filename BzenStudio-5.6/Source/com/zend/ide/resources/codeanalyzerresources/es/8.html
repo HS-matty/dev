@@ -1,0 +1,79 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Descripción</h3></td>
+		<td align="right"><h3>Categorú}:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Cuando <b>else</b> es usado después de dos <b>if</b>s aninados sin delimitadores
+de bloque (paréntesis de llave), uno podrú} confundir a que preposición "if" corresponde
+el "else".
+Es mejor especificar siempre las llaves.
+
+
+<h3>Ejemplo</h3>
+
+
+<table border="1">
+<tr>
+<td>
+Propenso a errores
+</td>
+<td bgcolor="#cccccc">
+<!-- Wrong -->
+<font color="#007700">if (</font><font color="#0000BB">$a </font><font color="#007700">== </font><font color="#0000BB">0</font><font color="#007700">)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;if(</font><font color="#0000BB">$c </font><font color="#007700">&gt; </font><font color="#0000BB">0</font><font color="#007700">)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font color="#DD0000">"OK"</font><font color="#007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;else
+<br>&nbsp;&nbsp;&nbsp;&nbsp;print </font><font color="#DD0000">"a no es cero!"</font><font color="#007700">;</font>
+</font>
+<!-- End -->
+</td>
+</tr>
+
+<tr>
+<td>
+Recomendado
+</td>
+<td bgcolor="#cccccc">
+<!-- Correct -->
+<font color="#007700">if (</font><font color="#0000BB">$a </font><font color="#007700">== </font><font color="#0000BB">0</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;if(</font><font color="#0000BB">$c </font><font color="#007700">&gt; </font><font color="#0000BB">0</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font color="#DD0000">"OK"</font><font color="#007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;} else {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font color="#DD0000">"a no es cero!"</font><font color="#007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>}</font>
+</font>
+<!-- End -->
+</td>
+</tr>
+</table>
+
+
+<!--error prone
+if ($a == 0)
+	if($c > 0)
+		print "OK";
+	else
+	print "a is not zero!";
+-->
+
+<!--recommended
+if ($a == 0) {
+	if($c > 0) {
+		print "OK";
+	} else {
+		print "a is not zero!";
+	}
+}
+-->
+
+</body>
+</html>

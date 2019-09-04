@@ -1,0 +1,41 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+</head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>説明</h3></td>
+		<td align="right"><h3>カテゴリ：  <font color="#804000">コード形式</font></h3></td>
+	</tr>
+</table>
+
+ローカル変数は、それ自身が定義される前に使用されることがあります。
+PHP は、最初にその変数が使用された時に変数を初期化します。それは、明示的に変数を初期化するコーディングより、可読性が高まるとともに不必要なバグを引き起こさない良い方法です。
+
+<h3>サンプル</h3>
+
+<font color="#007700">function </font><font Color="#0000BB">foo</font><font color="#007700">()
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#FF8000">// $a was never initialized!
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#007700">if (</font><font color="#0000BB">$a </font><font color="#007700">&gt; </font><font color="#0000BB">0</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>}
+<br></font>
+</font>
+
+<!--
+function foo()
+{
+	// $a was never initialized!
+	if ($a > 0) {
+		...
+	}
+}
+-->
+</body>
+</html>

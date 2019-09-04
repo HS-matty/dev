@@ -1,0 +1,43 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Descripción</h3></td>
+		<td align="right"><h3>Categorú}:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Uno de los argumentos de la función parece no ser usado.
+
+<h3>Ejemplo</h3>
+
+<font color="#007700">function </font><font Color="#0000BB">foo</font><font color="#007700">(</font><font color="#0000BB">$a</font><font color="#007700">, </font><font color="#0000BB">$b</font><font color="#007700">)
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#FF8000">// $b no es usado nunca
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#007700">if (</font><font color="#0000BB">$a</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font color="#DD0000">"OK!"</font><font color="#007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;} else {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font color="#DD0000">"\$a est?vacú}!"</font><font color="#007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>}
+<br></font>
+</font>
+
+<!--
+function foo($a, $b)
+{
+	// $b is never used
+	if ($a) {
+		echo "OK!";
+	} else {
+		echo "\$a is empty!";
+	}
+}
+-->
+
+</body>
+</html>

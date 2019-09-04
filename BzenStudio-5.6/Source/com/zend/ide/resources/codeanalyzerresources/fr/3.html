@@ -1,0 +1,40 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Description</h3></td>
+		<td align="right"><h3>Cat&eacute;gorie :  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Les assignations dans une structure conditionnelles sont g&eacute;n&eacute;ralement le
+r&eacute;sultat d'une coquille. Dans de nombreux cas, au lieu du signe &eacute;gal =,
+l'op&eacute;rateur d'&eacute;galit&eacute; devrait &ecirc;tre utilis&eacute;. 
+Lorque vous comparez une variable est une expression non-variable, il est courant
+de placer la variable &agrave; droite de l'op&eacute;rateur d'&eacute;galit&eacute;. De cette mani&egrave;re,
+si l'op&eacute;rateur d'&eacute;galit&eacute; est transform&eacute; en op&eacute;rateur d'assignement par erreur,
+PHP indiquera imm&eacute;diatement une erreur. Cela vous aidera &agrave; &eacute;viter toute la famille
+de ce bug.
+
+
+<h3>Exemple</h3>
+
+<font color="#007700">if (</font><font color="#0000BB">$a </font><font color="#007700">= </font><font color="#0000BB">1</font><font color="#007700">) { </font><font color="#FF8000">//il est probable que $a == 1 soit plus appropri&eacute;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#007700">...
+<br>}
+<br></font>
+</font>
+
+<!--
+if ($a = 1) { // il est probable que $a == 1 soit plus appropri&eacute;
+	...
+}
+-->
+
+
+</body>
+</html>

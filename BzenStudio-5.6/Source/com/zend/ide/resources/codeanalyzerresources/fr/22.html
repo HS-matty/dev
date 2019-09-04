@@ -1,0 +1,39 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Description</h3></td>
+		<td align="right"><h3>Cat&eacute;gorie :  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+La fonction ne retourne pas de valeur, mais cette valeur est utilis&eacute;e par
+la fonction appelante. Cela va probablement conduire &agrave; des probl&egrave;mes.
+
+<h3>Exemple</h3>
+
+<font color="#007700">function </font><font Color="#0000BB">foo</font><font color="#007700">()
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;...
+<br>&nbsp;&nbsp;&nbsp;&nbsp;return;
+<br>}
+<br>
+<br></font><font color="#0000BB">$a </font><font color="#007700">= </font><font Color="#0000BB">foo</font><font color="#007700">();
+<br></font>
+
+<!--
+function foo()
+{
+	...
+	return;
+}
+
+$a = foo();
+-->
+
+</body>
+</html>

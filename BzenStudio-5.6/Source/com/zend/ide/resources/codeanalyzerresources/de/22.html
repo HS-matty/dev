@@ -1,0 +1,39 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Beschreibung</h3></td>
+		<td align="right"><h3>Kategorie:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Eine Funktion liefert kein Ergebnis zur?k, dieses wird aber von Aufrufern 
+verwendet. Dies kann zu unerwarteten Problemen f?ren.
+
+<h3>Beispiel</h3>
+
+<font color="#007700">function </font><font Color="#0000BB">foo</font><font color="#007700">()
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;...
+<br>&nbsp;&nbsp;&nbsp;&nbsp;return;
+<br>}
+<br>
+<br></font><font color="#0000BB">$a </font><font color="#007700">= </font><font Color="#0000BB">foo</font><font color="#007700">();
+<br></font>
+
+<!--
+function foo()
+{
+	...
+	return;
+}
+
+$a = foo();
+-->
+
+</body>
+</html>

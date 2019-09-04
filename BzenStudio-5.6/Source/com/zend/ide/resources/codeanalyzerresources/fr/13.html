@@ -1,0 +1,47 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Description</h3></td>
+		<td align="right"><h3>Cat&eacute;gorie :  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Une variable n'apparait dans le code qu'une seule fois. G&eacute;n&eacute;ralement, cela peut
+&ecirc;tre une erreur ou une coquille.
+
+<h3>Exemple</h3>
+
+<font color="#0000BB">
+$variable </font><font color="#007700">= </font><font color="#0000BB">1</font><font color="#007700">;
+<br>
+<br>for (</font><font color="#0000BB">$i</font><font color="#007700">=</font><font color="#0000BB">0</font><font color="#007700">; </font><font color="#0000BB">$i</font><font color="#007700">&lt;</font><font color="#0000BB">10</font><font color="#007700">; </font><font color="#0000BB">$i</font><font color="#007700">++) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000BB">$variable </font><font color="#007700">+= </font><font color="#0000BB">$i</font><font color="#007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font color="#0000BB">$variale </font><font color="#007700">&gt; </font><font color="#0000BB">10</font><font color="#007700">) { </font><font color="#FF8000">// Coquille : devrait &ecirc;tre $variable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#007700">echo </font><font color="#DD0000">"impossible!"</font><font color="#007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;} else if (</font><font color="#0000BB">$var </font><font color="#007700">== </font><font color="#0000BB">5</font><font color="#007700">) { </font><font color="#FF8000">// Mauvais nom de variable ici : devrait &ecirc;tre $variable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#007700">echo </font><font color="#DD0000">"in the middle"</font><font color="#007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>}</font>
+</font>
+
+<!--
+$variable = 1;
+
+for ($i=0; $i<10; $i++) {
+	$variable += $i;
+	if ($variale > 10) { // Coquille : devrait &ecirc;tre $variable
+		echo "impossible!";
+	} else if ($var == 5) { // Mauvais nom de variable ici : devrait &ecirc;tre $variable
+		echo "in the middle";
+	}
+}
+-->
+</body>
+</html>
+
+

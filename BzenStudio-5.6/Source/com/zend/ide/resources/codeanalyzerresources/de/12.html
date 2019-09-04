@@ -1,0 +1,45 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Beschreibung</h3></td>
+		<td align="right"><h3>Kategorie:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Das Argument f? <b>break</b> ist größer als die aktuelle Schachtelungstiefe.
+
+<h3>Beispiel</h3>
+
+<font color="#007700">function </font><font Color="#0000BB">example</font><font color="#007700">()
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;for (</font><font color="#0000BB">$i</font><font color="#007700">=</font><font color="#0000BB">0</font><font color="#007700">; </font><font color="#0000BB">$i</font><font color="#007700">&lt;</font><font color="#0000BB">100</font><font color="#007700">; </font><font color="#0000BB">$i</font><font color="#007700">++) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (</font><font color="#0000BB">$j</font><font color="#007700">=</font><font color="#0000BB">0</font><font color="#007700">; </font><font color="#0000BB">$j</font><font color="#007700">&lt;</font><font color="#0000BB">100</font><font color="#007700">; </font><font color="#0000BB">$j</font><font color="#007700">++) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ((</font><font color="#0000BB">$i </font><font color="#007700">* </font><font color="#0000BB">$j</font><font color="#007700">) &gt; </font><font color="#0000BB">1000</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break </font><font color="#0000BB">3</font><font color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#FF8000">// Die Schachtelungstiefe an dieser Stelle ist 2.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#007700">}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>}
+<br></font>
+</font>
+
+<!--
+function example()
+{
+	for ($i=0; $i<100; $i++) {
+		for ($j=0; $j<100; $j++) {
+			if (($i * $j) > 1000) {
+				break 3;		// Die Schachtelungstiefe an dieser Stelle ist 2.
+			}
+		}
+	}
+}
+-->
+
+</body>
+</html>

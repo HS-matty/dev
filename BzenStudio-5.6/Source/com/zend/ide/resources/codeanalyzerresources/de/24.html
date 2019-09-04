@@ -1,0 +1,34 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Beschreibung</h3></td>
+		<td align="right"><h3>Kategorie:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Das Ende der Funktion wird erreicht, ohne dass ein Wert, der vom Aufrufer 
+erwartet und verwendet wird, zur?kgeliefert wird.
+
+<h3>Beispiel</h3>
+
+<font color="#007700">function </font><font Color="#0000BB">foo</font><font color="#007700">()
+<br>{
+<br>}
+<br>
+<br></font><font color="#0000BB">$a </font><font color="#007700">= </font><font Color="#0000BB">foo</font><font color="#007700">();
+<br></font>
+
+<!--
+function foo()
+{
+}
+
+$a = foo();
+-->
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Beschreibung</h3></td>
+		<td align="right"><h3>Kategorie:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Eine Variable wurde in einer Funktion als global deklariert, scheint aber nicht verwendet zu werden.
+
+
+<h3>Beispiel</h3>
+
+<font color="#007700">function </font><font Color="#0000BB">multiplyNum</font><font color="#007700">(</font><font color="#0000BB">$n</font><font color="#007700">)
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;global </font><font color="#0000BB">$multiplier</font><font color="#007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#FF8000">// $multiplier wird nicht verwendet
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#007700">return </font><font color="#0000BB">$n</font><font color="#007700">*</font><font color="#0000BB">2</font><font color="#007700">;
+<br>}</font>
+</font>
+
+<!--
+function multiplyNum($n)
+{
+	global $multiplier;
+	
+	// $multiplier wird nicht verwendet
+	return $n*2;
+}
+-->
+
+
+</body>
+</html>

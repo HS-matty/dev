@@ -1,0 +1,24 @@
+package com.zend.ide.desktop.e.p;
+
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
+
+class d
+  implements TreeSelectionListener
+{
+  final c a;
+
+  d(c paramc)
+  {
+  }
+
+  public void valueChanged(TreeSelectionEvent paramTreeSelectionEvent)
+  {
+    c.a(this.a);
+  }
+}
+
+/* Location:           C:\Program Files\Zend\ZendStudio-5.5.1\bin\ZendIDE.jar
+ * Qualified Name:     com.zend.ide.desktop.e.p.d
+ * JD-Core Version:    0.6.0
+ */

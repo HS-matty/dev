@@ -1,0 +1,55 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+</head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>説明</h3></td>
+		<td align="right"><h3>カテゴリ：  <font color="blue">バグ</font></h3></td>
+	</tr>
+</table>
+
+<b>break</b>文は、開発者に複数の入れ子のループから抜け出す機能を提供します。その場合は、明示的に <b>break</b>文を指定しなければなりません。
+<b>break</b>文のリターン値として変数を使用することは、予期しないコードのフローを変更する可能性があり、このようなことは回避すべきです。
+
+<h2>サンプル</h2>
+
+<table border="1">
+<tr>
+<td>
+Dangerous
+</td>
+<td bgcolor="#cccccc">
+<!-- Wrong -->
+<font color="#007700">break </font><font color="#0000BB">$foo</font><font color="#007700">;
+</font>
+</font>
+<!-- End -->
+</td>
+</tr>
+
+<tr>
+<td>
+Alternative
+</td>
+<td bgcolor="#cccccc">
+<!-- Correct -->
+<font color="#007700">if (</font><font color="#0000BB">$foo</font><font color="#007700">==</font><font color="#0000BB">1</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;break;
+<br>} else if (</font><font color="#0000BB">$foo</font><font color="#007700">=</font><font color="#0000BB">2</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;break </font><font color="#0000BB">2</font><font color="#007700">;
+<br>} else {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;die(</font><font color="#DD0000">"Unexpected error"</font><font color="#007700">);
+<br>}
+<br></font>
+</font><!-- End -->
+</td>
+</tr>
+</table>
+
+</body>
+</html>

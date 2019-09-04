@@ -1,0 +1,38 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+</head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>説明</h3></td>
+		<td align="right"><h3>カテゴリ：  <font color="blue">バグ</font></h3></td>
+	</tr>
+</table>
+
+関数がリターン値をリターンする場合や<b>return;</b>の構文のようにリターン値が
+存在しない場合、ある特定の環境では正しく動作しない可能性があります。
+それは、リターン値そのものが余分であることを意味しています。
+
+<h3>サンプル</h3>
+
+<font color="#007700">if (</font><font color="#0000BB">$a</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;return </font><font color="#0000BB">1</font><font color="#007700">;
+<br>} else {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;return;
+<br>}
+<br></font>
+
+<!--
+if ($a) {
+	return 1;
+} else {
+	return;
+}
+-->
+
+</body>
+</html>

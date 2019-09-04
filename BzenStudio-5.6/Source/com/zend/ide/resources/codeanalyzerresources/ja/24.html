@@ -1,0 +1,36 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+</head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>説明</h3></td>
+		<td align="right"><h3>カテゴリ：  <font color="blue">バグ</font></h3></td>
+	</tr>
+</table>
+
+制御は、値をリターンせず関数の終端に達しています。しかし、関数のリターン値は、
+コーラによって使用されています。これは、予期せぬ問題を引き起こすかもしれません。
+
+<h3>サンプル</h3>
+
+<font color="#007700">function </font><font Color="#0000BB">foo</font><font color="#007700">()
+<br>{
+<br>}
+<br>
+<br></font><font color="#0000BB">$a </font><font color="#007700">= </font><font Color="#0000BB">foo</font><font color="#007700">();
+<br></font>
+
+<!--
+function foo()
+{
+}
+
+$a = foo();
+-->
+</body>
+</html>

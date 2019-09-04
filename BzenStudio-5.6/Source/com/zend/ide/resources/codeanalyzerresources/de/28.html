@@ -1,0 +1,64 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Beschreibung</h3></td>
+		<td align="right"><h3>Kategorie:  <font color="red">Security</font></h3></td>
+	</tr>
+</table>
+
+include() oder eine analoge Funktion wird mit einem variablen Parameter 
+verwendet. Dies kann gefährlich sein, da Variablen in vielen Fällen von aussen 
+beeinflusst werden oder versehentlich ?erschrieben werden können.
+Es wird geraten, Konstanten anstelle von Variablen zu verwenden.
+
+<h3>Beispiel</h3>
+
+
+<table border="1">
+<tr>
+<td>
+Gefährlich
+</td>
+<td bgcolor="#cccccc">
+<!-- Wrong -->
+<font color="#0000BB">
+$script_path </font><font color="#007700">= </font><font color="#DD0000">"/htdocs"</font><font color="#007700">;
+<br>include(</font><font color="#0000BB">$script_path</font><font color="#007700">.</font><font color="#DD0000">"/foo.inc"</font><font color="#007700">);
+</font>
+<!-- End -->
+</td>
+</tr>
+
+<tr>
+<td>
+Empfohlen
+</td>
+<td bgcolor="#cccccc">
+<!-- Correct -->
+<font color="#0000BB">
+define</font><font color="#007700">(</font><font color="#DD0000">'SCRIPT_PATH'</font><font color="#007700">, </font><font color="#DD0000">"/htdocs"</font><font color="#007700">);
+<br>include(</font><font color="#0000BB">SCRIPT_PATH</font><font color="#007700">.</font><font color="#DD0000">"/foo.inc"</font><font color="#007700">);</font>
+<!-- End -->
+</td>
+</tr>
+</table>
+
+
+<!-- Dangerous
+$script_path = "/htdocs";
+include($script_path."/foo.inc");
+-->
+
+
+<!-- Recommended
+define('SCRIPT_PATH', "/htdocs");
+include(SCRIPT_PATH."/foo.inc");
+-->
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Description</h3></td>
+		<td align="right"><h3>Cat&eacute;gorie :  <font color="red">S&eacute;curit&eacute;</font></h3></td>
+	</tr>
+</table>
+
+include() ou toute autre fonction analogue est utilis&eacute;e avec un argument.
+Cela peut &ecirc;tre dangeureux, car dans de nombreux cas, les variables sont 
+modifiables par des utilisateurs distants, ou bien elles peuvent &ecirc;tre
+modifi&eacute;es ou &eacute;cras&eacute;es par erreur. Cela peut alors conduire &agrave; des comportements
+non d&eacute;sri&eacute;s, ou &agrave; l'ex&eacute;cution de code arbitraire.
+
+Il est recommand&eacute; de n'utiliser que des constantes dans ce cas.
+
+<h3>Exemple</h3>
+
+
+<table border="1">
+<tr>
+<td>
+Dangeureux
+</td>
+<td bgcolor="#cccccc">
+<!-- Wrong -->
+<font color="#0000BB">
+$script_path </font><font color="#007700">= </font><font color="#DD0000">"/htdocs"</font><font color="#007700">;
+<br>include(</font><font color="#0000BB">$script_path</font><font color="#007700">.</font><font color="#DD0000">"/foo.inc"</font><font color="#007700">);
+</font>
+<!-- End -->
+</td>
+</tr>
+
+<tr>
+<td>
+Recommand&eacute;
+</td>
+<td bgcolor="#cccccc">
+<!-- Correct -->
+<font color="#0000BB">
+define</font><font color="#007700">(</font><font color="#DD0000">'SCRIPT_PATH'</font><font color="#007700">, </font><font color="#DD0000">"/htdocs"</font><font color="#007700">);
+<br>include(</font><font color="#0000BB">SCRIPT_PATH</font><font color="#007700">.</font><font color="#DD0000">"/foo.inc"</font><font color="#007700">);</font>
+<!-- End -->
+</td>
+</tr>
+</table>
+
+
+<!-- Dangerous
+$script_path = "/htdocs";
+include($script_path."/foo.inc");
+-->
+
+
+<!-- Recommended
+define('SCRIPT_PATH', "/htdocs");
+include(SCRIPT_PATH."/foo.inc");
+-->
+
+</body>
+</html>

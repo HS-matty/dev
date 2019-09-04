@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!-- CD Catalog Data -->
+<CATALOG>
+    <CD TITLE="Picture book">
+        <ARTIST>Simply Red</ARTIST>
+        <COUNTRY>EU</COUNTRY>
+        <COMPANY>Elektra</COMPANY>
+        <PRICE>9.20</PRICE>
+        <YEAR>1985</YEAR>
+    </CD>
+    <CD TITLE="Greatest Hits">
+        <ARTIST>Guns &amp; Roses</ARTIST>
+        <COUNTRY>USA</COUNTRY>
+        <COMPANY>Geffen Records</COMPANY>
+        <PRICE>11.99</PRICE>
+        <YEAR>2004</YEAR>
+    </CD>
+</CATALOG>

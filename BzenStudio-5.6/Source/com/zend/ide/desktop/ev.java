@@ -1,0 +1,29 @@
+package com.zend.ide.desktop;
+
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+
+class ev
+  implements PropertyChangeListener
+{
+  final ek a;
+
+  private ev(ek paramek)
+  {
+  }
+
+  public void propertyChange(PropertyChangeEvent paramPropertyChangeEvent)
+  {
+    ek.a(this.a, ((Boolean)paramPropertyChangeEvent.getNewValue()).booleanValue());
+  }
+
+  ev(ek paramek, eh parameh)
+  {
+    this(paramek);
+  }
+}
+
+/* Location:           C:\Program Files\Zend\ZendStudio-5.5.1\bin\ZendIDE.jar
+ * Qualified Name:     com.zend.ide.desktop.ev
+ * JD-Core Version:    0.6.0
+ */

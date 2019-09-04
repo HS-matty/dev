@@ -1,0 +1,42 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Beschreibung</h3></td>
+		<td align="right"><h3>Kategorie:  <font color="#804000">Coding Style</font></h3></td>
+	</tr>
+</table>
+
+Eine lokale Variable wird vor ihrer Deklaration verwendet. Obwohl PHP Variablen 
+bei ihrer ersten Verwendung initialisiert, gilt es als guter Stil, 
+Variablen explizit zu initialisieren. Dies verbessert die Lesbarkeit 
+des Codes und beugt Fehlern vor.
+
+
+<h3>Beispiel</h3>
+
+<font color="#007700">function </font><font Color="#0000BB">foo</font><font color="#007700">()
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#FF8000">// $a wurde nicht initialisiert!
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#007700">if (</font><font color="#0000BB">$a </font><font color="#007700">&gt; </font><font color="#0000BB">0</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>}
+<br></font>
+</font>
+
+<!--
+function foo()
+{
+	// $a wurde nicht initialisiert!
+	if ($a > 0) {
+		...
+	}
+}
+-->
+</body>
+</html>

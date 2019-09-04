@@ -1,0 +1,36 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Description</h3></td>
+		<td align="right"><h3>Category:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Some code in the function can not be reached.  This part of the code is
+useless.
+
+<h3>Example</h3>
+
+
+<font color="#007700">function </font><font Color="#0000BB">foo</font><font color="#007700">()
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;...
+<br>&nbsp;&nbsp;&nbsp;&nbsp;return;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font Color="#0000BB">doSomethingImportant</font><font color="#007700">();&nbsp;&nbsp;</font><font color="#FF8000">// cannot be reached!
+<br></font><font color="#007700">}</font>
+
+<!--
+function foo()
+{
+	...
+	return;
+	doSomethingImportant();  // cannot be reached!
+}
+-->
+</body>
+</html>

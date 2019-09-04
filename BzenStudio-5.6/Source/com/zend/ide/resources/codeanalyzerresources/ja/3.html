@@ -1,0 +1,39 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+</head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>説明</h3></td>
+		<td align="right"><h3>カテゴリ：  <font color="blue">バグ</font></h3></td>
+	</tr>
+</table>
+
+条件分岐構文内での値の割り当ては、時々、演算結果のデータ型が割り当てられます。
+多くの場合は、割り当て演算子 = の代わりに、等式演算子 == が使用されます。
+
+変数と変数以外の表記を比較する場合、等式演算子の右辺の値を変数に格納することが共通の振る舞いです。その結果、等式演算子が誤って割り当て演算子と取り違えられると PHP は、即座にパースエラーを報告します。これは、このクラスの大部分のバグを回避するのに役立ちます。
+
+
+
+<h3>サンプル</h3>
+
+<font color="#007700">if (</font><font color="#0000BB">$a </font><font color="#007700">= </font><font color="#0000BB">1</font><font color="#007700">) { </font><font color="#FF8000">// probably it was meant to be $a == 1 here
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#007700">...
+<br>}
+<br></font>
+</font>
+
+<!--
+if ($a = 1) { // probably it was meant to be $a == 1 here
+	...
+}
+-->
+
+
+</body>
+</html>

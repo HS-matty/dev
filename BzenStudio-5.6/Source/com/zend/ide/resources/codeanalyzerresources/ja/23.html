@@ -1,0 +1,79 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+</head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>説明</h3></td>
+		<td align="right"><h3>カテゴリ：  <font color="blue">バグ</font></h3></td>
+	</tr>
+</table>
+
+関数は、returning-by-reference として定義されています。しかし、その結果は、
+参照により、代入されていません。
+参照が破壊されているか、リターン値が重複して割り当てられていることを意味します。
+
+<h3>サンプル</h3>
+
+
+<table border="1">
+<tr>
+<td>
+Incorrect
+</td>
+<td bgcolor="#cccccc">
+<!-- Wrong -->
+<font color="#007700">function &amp;</font><font color="#0000BB">foo</font><font color="#007700">()<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000BB">$ret </font><font color="#007700">= new </font><font Color="#0000BB">X</font><font color="#007700">();
+<br>&nbsp;&nbsp;&nbsp;&nbsp;return </font><font color="#0000BB">$ret</font><font color="#007700">;
+<br>}
+<br>
+<br></font><font color="#0000BB">$a </font><font color="#007700">= </font><font Color="#0000BB">foo</font><font color="#007700">();</font>
+<!-- End -->
+</td>
+</tr>
+
+<tr>
+<td>
+Correct
+</td>
+<td bgcolor="#cccccc">
+<!-- Correct -->
+<font color="#007700">function &amp;</font><font color="#0000BB">foo</font><font color="#007700">()<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000BB">$ret </font><font color="#007700">= new </font><font Color="#0000BB">X</font><font color="#007700">();
+<br>&nbsp;&nbsp;&nbsp;&nbsp;return </font><font color="#0000BB">$ret</font><font color="#007700">;
+<br>}
+<br>
+<br></font><font color="#0000BB">$a </font><font color="#007700">=&amp; </font><font Color="#0000BB">foo</font><font color="#007700">();</font>
+<!-- End -->
+</td>
+</tr>
+</table>
+
+
+<!--incorrect
+function &foo
+{
+	$ret = new X();
+	return $ret;
+}
+
+$a = foo();
+-->
+
+<!--correct
+function &foo
+{
+	$ret = new X();
+	return $ret;
+}
+
+$a =& foo();
+-->
+
+</body>
+</html>

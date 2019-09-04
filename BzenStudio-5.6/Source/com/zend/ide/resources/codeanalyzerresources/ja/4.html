@@ -1,0 +1,33 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+</head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>説明</h3></td>
+		<td align="right"><h3>カテゴリ：  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+print 文または、echo 文は、例え意味がなくても boolean コンテキスト内で使用されます。
+
+<h3>サンプル</h3>
+
+<font color="#007700">while (print </font><font color="#0000BB">$a</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font color="#0000BB">$a</font><font color="#007700">--;
+<br>}
+<br></font>
+</font>
+
+<!--
+while (print $a) {
+	echo $a--;
+}
+-->
+
+</body>
+</html>

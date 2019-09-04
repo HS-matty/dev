@@ -1,0 +1,27 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Beschreibung</h3></td>
+		<td align="right"><h3>Kategorie:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Die Funktion <b>sprintf</b> wird mit weniger Parametern aufgerufen, als der
+Formatstring benötigt.
+
+<h3>Beispiel</h3>
+
+<font color="#0000BB">sprintf</font><font color="#007700">(</font><font color="#DD0000">"%d %d\n"</font><font color="#007700">, </font><font color="#0000BB">17</font><font color="#007700">); </font><font color="#FF8000">// Der Formatstring erwartet 2 Parameter, aber nur 1 wird angegeben.
+</font>
+
+<!--
+sprintf("%d %d\n", 17); // Der Formatstring erwartet 2 Parameter, aber nur 1 wird angegeben.
+-->
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Description</h3></td>
+		<td align="right"><h3>Category:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+A variable appears in the code only once.  In many cases it may be the result of a mistake
+or a typo.
+
+<h3>Example</h3>
+
+<font color="#0000BB">
+$variable </font><font color="#007700">= </font><font color="#0000BB">1</font><font color="#007700">;
+<br>
+<br>for (</font><font color="#0000BB">$i</font><font color="#007700">=</font><font color="#0000BB">0</font><font color="#007700">; </font><font color="#0000BB">$i</font><font color="#007700">&lt;</font><font color="#0000BB">10</font><font color="#007700">; </font><font color="#0000BB">$i</font><font color="#007700">++) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000BB">$variable </font><font color="#007700">+= </font><font color="#0000BB">$i</font><font color="#007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font color="#0000BB">$variale </font><font color="#007700">&gt; </font><font color="#0000BB">10</font><font color="#007700">) { </font><font color="#FF8000">// typo - should be $variable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#007700">echo </font><font color="#DD0000">"impossible!"</font><font color="#007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;} else if (</font><font color="#0000BB">$var </font><font color="#007700">== </font><font color="#0000BB">5</font><font color="#007700">) { </font><font color="#FF8000">// wrong variable name here - should be $variable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#007700">echo </font><font color="#DD0000">"in the middle"</font><font color="#007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>}</font>
+</font>
+
+<!--
+$variable = 1;
+
+for ($i=0; $i<10; $i++) {
+	$variable += $i;
+	if ($variale > 10) { // typo - should be $variable
+		echo "impossible!";
+	} else if ($var == 5) { // wrong variable name here - should be $variable
+		echo "in the middle";
+	}
+}
+-->
+</body>
+</html>
+
+

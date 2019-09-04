@@ -1,0 +1,77 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Descripción</h3></td>
+		<td align="right"><h3>Categorú}:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Una función es definida para que retorne-por-referencia, pero el resultado no es
+asignado por referencia. Esto significa que la referencia se romper? y el valor retornado
+estar?duplicado en vez de asignado.
+
+<h3>Ejemplo</h3>
+
+
+<table border="1">
+<tr>
+<td>
+Incorrecto
+</td>
+<td bgcolor="#cccccc">
+<!-- Wrong -->
+<font color="#007700">function &amp;</font><font color="#0000BB">foo</font><font color="#007700">()<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000BB">$ret </font><font color="#007700">= new </font><font Color="#0000BB">X</font><font color="#007700">();
+<br>&nbsp;&nbsp;&nbsp;&nbsp;return </font><font color="#0000BB">$ret</font><font color="#007700">;
+<br>}
+<br>
+<br></font><font color="#0000BB">$a </font><font color="#007700">= </font><font Color="#0000BB">foo</font><font color="#007700">();</font>
+<!-- End -->
+</td>
+</tr>
+
+<tr>
+<td>
+Correcto
+</td>
+<td bgcolor="#cccccc">
+<!-- Correct -->
+<font color="#007700">function &amp;</font><font color="#0000BB">foo</font><font color="#007700">()<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000BB">$ret </font><font color="#007700">= new </font><font Color="#0000BB">X</font><font color="#007700">();
+<br>&nbsp;&nbsp;&nbsp;&nbsp;return </font><font color="#0000BB">$ret</font><font color="#007700">;
+<br>}
+<br>
+<br></font><font color="#0000BB">$a </font><font color="#007700">=&amp; </font><font Color="#0000BB">foo</font><font color="#007700">();</font>
+<!-- End -->
+</td>
+</tr>
+</table>
+
+
+<!--incorrect
+function &foo
+{
+	$ret = new X();
+	return $ret;
+}
+
+$a = foo();
+-->
+
+<!--correct
+function &foo
+{
+	$ret = new X();
+	return $ret;
+}
+
+$a =& foo();
+-->
+
+</body>
+</html>

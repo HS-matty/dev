@@ -1,0 +1,35 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Description</h3></td>
+		<td align="right"><h3>Category:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Control reaches the end of the function without returning a value, but the return
+value of the function is used by a caller.  This may lead to unexpected
+behavior.
+
+<h3>Example</h3>
+
+<font color="#007700">function </font><font Color="#0000BB">foo</font><font color="#007700">()
+<br>{
+<br>}
+<br>
+<br></font><font color="#0000BB">$a </font><font color="#007700">= </font><font Color="#0000BB">foo</font><font color="#007700">();
+<br></font>
+
+<!--
+function foo()
+{
+}
+
+$a = foo();
+-->
+</body>
+</html>

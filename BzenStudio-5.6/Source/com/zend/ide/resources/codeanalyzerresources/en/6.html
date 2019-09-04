@@ -1,0 +1,31 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Description</h3></td>
+		<td align="right"><h3>Category:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Object used in boolean context, even though it is meaningless.
+
+<h3>Example</h3>
+
+<font color="#007700">if ((</font><font color="#0000BB">$a </font><font color="#007700">= new </font><font Color="#0000BB">Foo</font><font color="#007700">())) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;...
+<br>}
+<br></font>
+</font>
+
+<!--
+if (($a = new Foo())) {
+	...
+}
+-->
+
+</body>
+</html>

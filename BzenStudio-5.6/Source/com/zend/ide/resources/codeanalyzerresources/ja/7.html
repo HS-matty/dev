@@ -1,0 +1,80 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+</head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>説明</h3></td>
+		<td align="right"><h3>カテゴリ：  <font color="#804000">推奨しない機能</font></h3></td>
+	</tr>
+</table>
+
+参照渡しによる呼び出しは、最近の多くの PHP バージョンで推奨されていません。関数呼び出しの際のプリフィックス & を指定する代わりに、それは、関数定義の際に指定します。
+
+
+<h3>サンプル</h3>
+
+<table border="1">
+<tr>
+<td>
+Deprecated
+</td>
+<td bgcolor="#cccccc">
+<!-- Wrong -->
+<font color="#007700">function </font><font Color="#0000BB">increment</font><font color="#007700">(</font><font color="#0000BB">$n</font><font color="#007700">)
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000BB">$n</font><font color="#007700">++;
+<br>}
+<br>
+<br></font><font color="#0000BB">$foo </font><font color="#007700">= </font><font color="#0000BB">5</font><font color="#007700">;
+<br></font><font Color="#0000BB">increment</font><font color="#007700">(&amp;</font><font color="#0000BB">$foo</font><font color="#007700">);</font>
+</font>
+<!-- End -->
+</td>
+</tr>
+
+<tr>
+<td>
+Correct
+</td>
+<td bgcolor="#cccccc">
+<!-- Correct -->
+<font color="#007700">function </font><font Color="#0000BB">increment</font><font color="#007700">(&amp;</font><font color="#0000BB">$n</font><font color="#007700">)
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000BB">$n</font><font color="#007700">++;
+<br>}
+<br>
+<br></font><font color="#0000BB">$foo </font><font color="#007700">= </font><font color="#0000BB">5</font><font color="#007700">;
+<br></font><font Color="#0000BB">increment</font><font color="#007700">(</font><font color="#0000BB">$foo</font><font color="#007700">);</font>
+</font>
+<!-- End -->
+</td>
+</tr>
+</table>
+
+<!--incorrect
+function increment($n)
+{
+	$n++;
+}
+
+$foo = 5;
+increment(&$foo);
+-->
+
+<!--correct
+function increment(&$n)
+{
+	$n++;
+}
+
+$foo = 5;
+increment($foo);
+-->
+
+</body>
+</html>

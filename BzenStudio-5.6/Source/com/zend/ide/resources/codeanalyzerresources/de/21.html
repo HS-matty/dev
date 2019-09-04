@@ -1,0 +1,35 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Beschreibung</h3></td>
+		<td align="right"><h3>Kategorie:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Wenn eine Funktion nur fallweise einen Wert zur?kgibt, kann es in manchen 
+Fällen so erscheinen, als ob sie unkorrekt arbeiten w?de.
+
+<h3>Beispiel</h3>
+
+<font color="#007700">if (</font><font color="#0000BB">$a</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;return </font><font color="#0000BB">1</font><font color="#007700">;
+<br>} else {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;return;
+<br>}
+<br></font>
+
+<!--
+if ($a) {
+	return 1;
+} else {
+	return;
+}
+-->
+
+</body>
+</html>

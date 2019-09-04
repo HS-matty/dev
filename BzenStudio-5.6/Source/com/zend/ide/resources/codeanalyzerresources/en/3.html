@@ -1,0 +1,40 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Description</h3></td>
+		<td align="right"><h3>Category:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Assignments in a conditional statement are sometimes the result of a typo.
+In many cases, instead of the assignment operator =, the equality operator ==
+should be used.
+When comparing a variable and a non-variable expression, it is common practice
+to put the variable on the right-hand side of the equality operator, so that if
+the equality operator is erroneously replaced with the assignment operator, PHP
+will report a parse error immediately.  This helps you avoid a big subset of
+this class of bugs.
+
+
+<h3>Example</h3>
+
+<font color="#007700">if (</font><font color="#0000BB">$a </font><font color="#007700">= </font><font color="#0000BB">1</font><font color="#007700">) { </font><font color="#FF8000">// probably it was meant to be $a == 1 here
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#007700">...
+<br>}
+<br></font>
+</font>
+
+<!--
+if ($a = 1) { // probably it was meant to be $a == 1 here
+	...
+}
+-->
+
+
+</body>
+</html>

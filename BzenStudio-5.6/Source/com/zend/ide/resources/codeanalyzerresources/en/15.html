@@ -1,0 +1,40 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Description</h3></td>
+		<td align="right"><h3>Category:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+A variable is defined as global in a function but does not appear to be used.
+
+
+<h3>Example</h3>
+
+<font color="#007700">function </font><font Color="#0000BB">multiplyNum</font><font color="#007700">(</font><font color="#0000BB">$n</font><font color="#007700">)
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;global </font><font color="#0000BB">$multiplier</font><font color="#007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#FF8000">// $multiplier is never used in the function
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#007700">return </font><font color="#0000BB">$n</font><font color="#007700">*</font><font color="#0000BB">2</font><font color="#007700">;
+<br>}</font>
+</font>
+
+<!--
+function multiplyNum($n)
+{
+	global $multiplier;
+	
+	// $multiplier is never used in the function
+	return $n*2;
+}
+-->
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Beschreibung</h3></td>
+		<td align="right"><h3>Kategorie:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+<b>break</b> erlaubt es, mit einem optionalen Parameter aus verschachtelten 
+Schleifen auszubrechen. F? diesen Parameter sollte keine Variable verwendet werden,
+da dies zu unerwarteten Seiteneffekten f?ren kann.
+
+<h2>Beispiel</h2>
+
+<table border="1">
+<tr>
+<td>
+Gefährlich
+</td>
+<td bgcolor="#cccccc">
+<!-- Wrong -->
+<font color="#007700">break </font><font color="#0000BB">$foo</font><font color="#007700">;
+</font>
+</font>
+<!-- End -->
+</td>
+</tr>
+
+<tr>
+<td>
+Alternative
+</td>
+<td bgcolor="#cccccc">
+<!-- Correct -->
+<font color="#007700">if (</font><font color="#0000BB">$foo</font><font color="#007700">==</font><font color="#0000BB">1</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;break;
+<br>} else if (</font><font color="#0000BB">$foo</font><font color="#007700">=</font><font color="#0000BB">2</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;break </font><font color="#0000BB">2</font><font color="#007700">;
+<br>} else {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;die(</font><font color="#DD0000">"Unexpected error"</font><font color="#007700">);
+<br>}
+<br></font>
+</font><!-- End -->
+</td>
+</tr>
+</table>
+
+</body>
+</html>

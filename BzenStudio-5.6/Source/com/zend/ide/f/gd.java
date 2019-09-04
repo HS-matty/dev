@@ -1,0 +1,11 @@
+package com.zend.ide.f;
+
+public abstract interface gd
+{
+  public abstract String c();
+}
+
+/* Location:           C:\Program Files\Zend\ZendStudio-5.5.1\bin\ZendIDE.jar
+ * Qualified Name:     com.zend.ide.f.gd
+ * JD-Core Version:    0.6.0
+ */

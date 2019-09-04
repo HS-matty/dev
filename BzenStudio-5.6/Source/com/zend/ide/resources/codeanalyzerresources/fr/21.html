@@ -1,0 +1,37 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Description</h3></td>
+		<td align="right"><h3>Cat&eacute;gorie :  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Lorsqu'une fonction retourne parfois une valeur, et parfois pas
+(i.e. utilise une instruction <b>return;</b> vide), cela peut impliquer que la
+fonction ne se comporte pas comme il faut, dans certaines circonstances.
+Alternativement, cela peut signifier que la valeur retourn&eacute;e est redondante.
+
+<h3>Exemple</h3>
+
+<font color="#007700">if (</font><font color="#0000BB">$a</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;return </font><font color="#0000BB">1</font><font color="#007700">;
+<br>} else {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;return;
+<br>}
+<br></font>
+
+<!--
+if ($a) {
+	return 1;
+} else {
+	return;
+}
+-->
+
+</body>
+</html>

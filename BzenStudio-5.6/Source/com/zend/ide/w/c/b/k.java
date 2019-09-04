@@ -1,0 +1,66 @@
+package com.zend.ide.w.c.b;
+
+import com.zend.ide.w.c.f;
+import com.zend.ide.w.c.g;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Map;
+
+public class k extends d
+{
+  public k(com.zend.ide.w.c.d paramd)
+  {
+    super(paramd);
+  }
+
+  public void a(Map paramMap)
+    throws y
+  {
+    super.a(paramMap);
+    ArrayList localArrayList = new ArrayList();
+    File[] arrayOfFile = d();
+    if ((arrayOfFile == null) || (arrayOfFile.length == 0))
+      throw new y("Missing target(s)");
+    String[] arrayOfString1 = (String[])(String[])paramMap.get("TARGETS");
+    Boolean localBoolean = (Boolean)paramMap.get("FORCE");
+    if (Boolean.TRUE.equals(localBoolean))
+      localArrayList.add("--force");
+    for (int i = 0; i < arrayOfString1.length; i++)
+      localArrayList.add(arrayOfString1[i]);
+    String str1 = (String)paramMap.get("ADDITIONAL");
+    if ((str1 != null) && (!str1.trim().equals("")))
+    {
+      arrayOfString2 = str1.split(" ");
+      for (int j = 0; j < arrayOfString2.length; j++)
+      {
+        String str2 = arrayOfString2[j].trim();
+        if (str2.equals(""))
+          continue;
+        localArrayList.add(str2);
+      }
+    }
+    localArrayList.add("--non-interactive");
+    a("delete");
+    String[] arrayOfString2 = new String[localArrayList.size()];
+    localArrayList.toArray(arrayOfString2);
+    a(arrayOfString2);
+  }
+
+  public void a()
+    throws y
+  {
+    Map localMap = c();
+    f localf = this.f.d().f();
+    if (localf == null)
+      return;
+    localMap.put("FORCE", Boolean.valueOf(localf.g()));
+    localMap.put("ADDITIONAL", localf.l());
+    a(localMap);
+    super.a();
+  }
+}
+
+/* Location:           C:\Program Files\Zend\ZendStudio-5.5.1\bin\ZendIDE.jar
+ * Qualified Name:     com.zend.ide.w.c.b.k
+ * JD-Core Version:    0.6.0
+ */

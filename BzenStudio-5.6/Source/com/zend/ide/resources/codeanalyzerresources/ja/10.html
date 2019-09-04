@@ -1,0 +1,47 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+</head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>説明</h3></td>
+		<td align="right"><h3>カテゴリ：  <font color="#804000">コード形式</font></h3></td>
+	</tr>
+</table>
+
+<b>define() 関数</b>は、引用符なしでコンスタント値として記述された第1引数がしばしば、使用されます。これは、正しい記述ではありません。<b>define() 関数</b>の第1引数は、コンスタント値ではなく、文字列表記にすべきです。
+
+<h3>サンプル</h3>
+
+<table border="1">
+<tr>
+<td>
+Wrong
+</td>
+<td bgcolor="#cccccc">
+<!-- Wrong -->
+<font color="#0000BB">define</font><font color="#007700">(</font><font color="#0000BB">LIFE</font><font color="#007700">, </font><font color="#0000BB">42</font><font color="#007700">);</font>
+</font>
+<!-- End -->
+</td>
+</tr>
+
+<tr>
+<td>
+Correct
+</td>
+<td bgcolor="#cccccc">
+<!-- Correct -->
+<font color="#0000BB">define</font><font color="#007700">(</font><font color="#DD0000">'LIFE'</font><font color="#007700">, </font><font color="#0000BB">42</font><font color="#007700">);</font>
+</font>
+<!-- End -->
+</td>
+</tr>
+</table>
+
+</body>
+</html>

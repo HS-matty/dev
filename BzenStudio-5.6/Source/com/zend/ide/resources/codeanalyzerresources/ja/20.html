@@ -1,0 +1,73 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+</head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>説明</h3></td>
+		<td align="right"><h3>カテゴリ：  <font color="green">パフォーマンス</font></h3></td>
+	</tr>
+</table>
+
+変数は、参照渡しで渡されています。しかし、その値は変更することはできません。
+参照渡しは、ポピュラーの方法ですが、多くの場合、実際にはパフォーマンスの劣化
+につながるケースがあります。したがって、標準的な pass-by-value を使用すること
+をお勧めします。
+
+
+<h3>サンプル</h3>
+
+<table border="1">
+<tr>
+<td>
+Inefficient
+</td>
+<td bgcolor="#cccccc">
+<!-- Wrong -->
+<font color="#007700">function </font><font Color="#0000BB">foo</font><font color="#007700">(&amp;</font><font color="#0000BB">$a</font><font color="#007700">)
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font color="#0000BB">$a</font><font color="#007700">;
+<br>}
+</font>
+<!-- End -->
+</td>
+</tr>
+
+<tr>
+<td>
+Recommended
+</td>
+<td bgcolor="#cccccc">
+<!-- Correct -->
+<font color="#007700">function </font><font Color="#0000BB">foo</font><font color="#007700">(</font><font color="#0000BB">$a</font><font color="#007700">)
+<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font color="#0000BB">$a</font><font color="#007700">;
+<br>}
+</font>
+<!-- End -->
+</td>
+</tr>
+</table>
+
+
+<!--inefficient
+function foo(&$a)
+{
+	echo $a;
+}
+-->
+
+<!--recommended
+function foo($a)
+{
+	echo $a;
+}
+-->
+
+
+</body>
+</html>

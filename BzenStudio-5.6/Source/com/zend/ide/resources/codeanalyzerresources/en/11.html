@@ -1,0 +1,54 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Description</h3></td>
+		<td align="right"><h3>Category:  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+The <b>break</b> construct allows developers to step out of multiple nesting level of loops, by specifying
+the optional argument.  Providing <b>break</b> with a variable as this argument may change the flow of the
+code in unexpected ways, and should be avoided.
+
+<h2>Example</h2>
+
+<table border="1">
+<tr>
+<td>
+Dangerous
+</td>
+<td bgcolor="#cccccc">
+<!-- Wrong -->
+<font color="#007700">break </font><font color="#0000BB">$foo</font><font color="#007700">;
+</font>
+</font>
+<!-- End -->
+</td>
+</tr>
+
+<tr>
+<td>
+Alternative
+</td>
+<td bgcolor="#cccccc">
+<!-- Correct -->
+<font color="#007700">if (</font><font color="#0000BB">$foo</font><font color="#007700">==</font><font color="#0000BB">1</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;break;
+<br>} else if (</font><font color="#0000BB">$foo</font><font color="#007700">=</font><font color="#0000BB">2</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;break </font><font color="#0000BB">2</font><font color="#007700">;
+<br>} else {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;die(</font><font color="#DD0000">"Unexpected error"</font><font color="#007700">);
+<br>}
+<br></font>
+</font><!-- End -->
+</td>
+</tr>
+</table>
+
+</body>
+</html>

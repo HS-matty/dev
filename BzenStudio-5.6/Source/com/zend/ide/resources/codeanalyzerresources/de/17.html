@@ -1,0 +1,37 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Beschreibung</h3></td>
+		<td align="right"><h3>Kategorie:  <font color="red">Security</font></h3></td>
+	</tr>
+</table>
+
+Eine globale Variable wird verwendet, bevor sie initialisiert wurde.
+
+Diese Warnung erscheint möglicherweise, weil Sie sich auf 
+<b>register_globals</b> oder Variablen aus Include-Dateien verlassen. In diesen 
+Fällen können Sie diese Warnung ignorieren.
+
+<h3>Beispiel</h3>
+
+<font color="#FF8000">// $a was never initialized!
+<br></font><font color="#007700">if (</font><font color="#0000BB">$a </font><font color="#007700">&gt; </font><font color="#0000BB">0</font><font color="#007700">) {
+<br>&nbsp;&nbsp;&nbsp;&nbsp;...
+<br>}
+<br></font>
+</font>
+
+<!--
+// $a wurde nicht initialisiert!
+if ($a > 0) {
+	...
+}
+-->
+
+</body>
+</html>

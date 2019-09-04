@@ -1,0 +1,144 @@
+
+rce.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_main>:
+		void echo(const char *_str) {
+			printf(_str);
+		}
+};
+
+int main(int argc, char** argv) {
+   0:	8d 4c 24 04          	lea    0x4(%esp),%ecx
+   4:	83 e4 f0             	and    $0xfffffff0,%esp
+   7:	ff 71 fc             	pushl  -0x4(%ecx)
+   a:	55                   	push   %ebp
+   b:	89 e5                	mov    %esp,%ebp
+   d:	57                   	push   %edi
+   e:	56                   	push   %esi
+   f:	53                   	push   %ebx
+  10:	51                   	push   %ecx
+  11:	83 ec 68             	sub    $0x68,%esp
+  14:	c7 45 bc 00 00 00 00 	movl   $0x0,-0x44(%ebp)
+			17: dir32	___gxx_personality_sj0
+  1b:	c7 45 c0 00 00 00 00 	movl   $0x0,-0x40(%ebp)
+			1e: dir32	.gcc_except_table
+  22:	8d 45 c4             	lea    -0x3c(%ebp),%eax
+  25:	8d 5d e8             	lea    -0x18(%ebp),%ebx
+  28:	89 18                	mov    %ebx,(%eax)
+  2a:	ba 97 00 00 00       	mov    $0x97,%edx
+			2b: dir32	.text
+  2f:	89 50 04             	mov    %edx,0x4(%eax)
+  32:	89 60 08             	mov    %esp,0x8(%eax)
+  35:	8d 45 a4             	lea    -0x5c(%ebp),%eax
+  38:	89 04 24             	mov    %eax,(%esp)
+  3b:	e8 00 00 00 00       	call   40 <_main+0x40>
+			3c: DISP32	__Unwind_SjLj_Register
+  40:	e8 00 00 00 00       	call   45 <_main+0x45>
+			41: DISP32	___main
+	//printf("test");
+	Test _test;
+  45:	8d 45 e7             	lea    -0x19(%ebp),%eax
+  48:	89 c1                	mov    %eax,%ecx
+  4a:	e8 00 00 00 00       	call   4f <_main+0x4f>
+			4b: DISP32	__ZN4TestC1Ev
+	_test.echo("cpp class test");
+  4f:	8d 45 e7             	lea    -0x19(%ebp),%eax
+  52:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+			55: dir32	.rdata
+  59:	c7 45 a8 01 00 00 00 	movl   $0x1,-0x58(%ebp)
+  60:	89 c1                	mov    %eax,%ecx
+  62:	e8 00 00 00 00       	call   67 <_main+0x67>
+			63: DISP32	__ZN4Test4echoEPKc
+  67:	83 ec 04             	sub    $0x4,%esp
+	_test.echo(TEST_CONST);
+  6a:	8d 45 e7             	lea    -0x19(%ebp),%eax
+  6d:	c7 04 24 0f 00 00 00 	movl   $0xf,(%esp)
+			70: dir32	.rdata
+  74:	89 c1                	mov    %eax,%ecx
+  76:	e8 00 00 00 00       	call   7b <_main+0x7b>
+			77: DISP32	__ZN4Test4echoEPKc
+  7b:	83 ec 04             	sub    $0x4,%esp
+	//_test->echo("hello usin classes");
+	return 0;
+  7e:	c7 45 a0 00 00 00 00 	movl   $0x0,-0x60(%ebp)
+  85:	8d 45 e7             	lea    -0x19(%ebp),%eax
+  88:	89 c1                	mov    %eax,%ecx
+  8a:	e8 00 00 00 00       	call   8f <_main+0x8f>
+			8b: DISP32	__ZN4TestD1Ev
+  8f:	8b 45 a0             	mov    -0x60(%ebp),%eax
+  92:	89 45 a0             	mov    %eax,-0x60(%ebp)
+  95:	eb 25                	jmp    bc <_main+0xbc>
+  97:	8d 6d 18             	lea    0x18(%ebp),%ebp
+  9a:	8b 45 ac             	mov    -0x54(%ebp),%eax
+  9d:	89 45 a0             	mov    %eax,-0x60(%ebp)
+  a0:	8d 45 e7             	lea    -0x19(%ebp),%eax
+  a3:	89 c1                	mov    %eax,%ecx
+  a5:	e8 00 00 00 00       	call   aa <_main+0xaa>
+			a6: DISP32	__ZN4TestD1Ev
+  aa:	8b 45 a0             	mov    -0x60(%ebp),%eax
+  ad:	89 04 24             	mov    %eax,(%esp)
+  b0:	c7 45 a8 ff ff ff ff 	movl   $0xffffffff,-0x58(%ebp)
+  b7:	e8 00 00 00 00       	call   bc <_main+0xbc>
+			b8: DISP32	__Unwind_SjLj_Resume
+  bc:	8d 45 a4             	lea    -0x5c(%ebp),%eax
+  bf:	89 04 24             	mov    %eax,(%esp)
+  c2:	e8 00 00 00 00       	call   c7 <_main+0xc7>
+			c3: DISP32	__Unwind_SjLj_Unregister
+}
+  c7:	8b 45 a0             	mov    -0x60(%ebp),%eax
+  ca:	8d 65 f0             	lea    -0x10(%ebp),%esp
+  cd:	59                   	pop    %ecx
+  ce:	5b                   	pop    %ebx
+  cf:	5e                   	pop    %esi
+  d0:	5f                   	pop    %edi
+  d1:	5d                   	pop    %ebp
+  d2:	8d 61 fc             	lea    -0x4(%ecx),%esp
+  d5:	c3                   	ret    
+  d6:	90                   	nop
+		Test(){
+  d7:	90                   	nop
+
+Disassembly of section .text$_ZN4TestC1Ev:
+
+00000000 <__ZN4TestC1Ev>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 04             	sub    $0x4,%esp
+   6:	89 4d fc             	mov    %ecx,-0x4(%ebp)
+		}
+   9:	c9                   	leave  
+   a:	c3                   	ret    
+   b:	90                   	nop
+
+Disassembly of section .text$_ZN4TestD1Ev:
+
+00000000 <__ZN4TestD1Ev>:
+		~Test(){
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 04             	sub    $0x4,%esp
+   6:	89 4d fc             	mov    %ecx,-0x4(%ebp)
+		}
+   9:	c9                   	leave  
+   a:	c3                   	ret    
+   b:	90                   	nop
+
+Disassembly of section .text$_ZN4Test4echoEPKc:
+
+00000000 <__ZN4Test4echoEPKc>:
+		void echo(const char *_str) {
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 28             	sub    $0x28,%esp
+   6:	89 4d f4             	mov    %ecx,-0xc(%ebp)
+			printf(_str);
+   9:	8b 45 08             	mov    0x8(%ebp),%eax
+   c:	89 04 24             	mov    %eax,(%esp)
+   f:	e8 00 00 00 00       	call   14 <__ZN4Test4echoEPKc+0x14>
+			10: DISP32	_printf
+		}
+  14:	c9                   	leave  
+  15:	c2 04 00             	ret    $0x4

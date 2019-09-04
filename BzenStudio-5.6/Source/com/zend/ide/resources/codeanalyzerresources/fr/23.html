@@ -1,0 +1,77 @@
+<html>
+<head><style>
+p, td, body {font-family:Dialog,Arial,Helvetica;}
+</style></head>
+<body>
+
+<table width="100%">
+	<tr>
+		<td><h3>Description</h3></td>
+		<td align="right"><h3>Cat&eacute;gorie :  <font color="blue">Bug</font></h3></td>
+	</tr>
+</table>
+
+Une fonction est d&eacute;finie comme retournant une valeur par r&eacute;f&eacute;rence, mais le r&eacute;sulat
+n'est pas assign&eacute; par r&eacute;f&eacute;rence. Cela signifie que la r&eacute;f&eacute;rence est cass&eacute;e, et que
+la valeur retourn&eacute;e sera dupliqu&eacute;e lors de l'affectation.
+
+<h3>Exemple</h3>
+
+
+<table border="1">
+<tr>
+<td>
+Incorrect
+</td>
+<td bgcolor="#cccccc">
+<!-- Wrong -->
+<font color="#007700">function &amp;</font><font color="#0000BB">foo</font><font color="#007700">()<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000BB">$ret </font><font color="#007700">= new </font><font Color="#0000BB">X</font><font color="#007700">();
+<br>&nbsp;&nbsp;&nbsp;&nbsp;return </font><font color="#0000BB">$ret</font><font color="#007700">;
+<br>}
+<br>
+<br></font><font color="#0000BB">$a </font><font color="#007700">= </font><font Color="#0000BB">foo</font><font color="#007700">();</font>
+<!-- End -->
+</td>
+</tr>
+
+<tr>
+<td>
+Correct
+</td>
+<td bgcolor="#cccccc">
+<!-- Correct -->
+<font color="#007700">function &amp;</font><font color="#0000BB">foo</font><font color="#007700">()<br>{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000BB">$ret </font><font color="#007700">= new </font><font Color="#0000BB">X</font><font color="#007700">();
+<br>&nbsp;&nbsp;&nbsp;&nbsp;return </font><font color="#0000BB">$ret</font><font color="#007700">;
+<br>}
+<br>
+<br></font><font color="#0000BB">$a </font><font color="#007700">=&amp; </font><font Color="#0000BB">foo</font><font color="#007700">();</font>
+<!-- End -->
+</td>
+</tr>
+</table>
+
+
+<!--incorrect
+function &foo
+{
+	$ret = new X();
+	return $ret;
+}
+
+$a = foo();
+-->
+
+<!--correct
+function &foo
+{
+	$ret = new X();
+	return $ret;
+}
+
+$a =& foo();
+-->
+
+</body>
+</html>
