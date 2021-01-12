@@ -8,14 +8,14 @@ int 10h
 
 mov si,0x11111h
 push si
-call mem_save
+call mem_save_dword
 ret
 
 
 
-mem_save proc near
+mem_save_dword proc near
 pop si
 ret
-mem_save endp
+mem_save_dword endp
 
 end start
