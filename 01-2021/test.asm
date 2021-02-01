@@ -33,9 +33,15 @@ stack_push proc near
 
 mov si,offset dx
 call mem_save_dword
-
+ret
 stack_push endp
 
+stack_push proc near
+
+mov di,offset dx
+call mem_load_dword
+ret
+stack_push endp
 
 api_console_echo proc near
 
