@@ -24,9 +24,19 @@ mov si,di
 mov dx,010101h
 call stack_push 
 
+call show_hello_world ;D
+
+ret
+
+;25-04-2021
+show_hello_world proc near
+
+mov si, HELLO_WORLD_MESSAGE
 call api_console_echo
 
 ret
+show_hello_world endp
+;end
 
 
 stack_push proc near
